@@ -1,0 +1,94 @@
+<!-- <div style="float: left; width: 10%;">
+  <ul #datesList>
+    <li *ngFor="let x of dates; let i = index">
+      
+      <button style="padding: 50%; border-radius: 50%; border: none;" *ngIf="getDateStatus(x.date)" disabled="true" (click)="setDate(i)" [style.background]="x.selected ? 'blue' : 'transparent'">{{x.date}}</button>
+      
+      <button style="padding: 50%; border-radius: 50%; border: none;" *ngIf="!getDateStatus(x.date)" (click)="setDate(i)" [style.color]="x.selected ? 'white' : 'black'" [style.background]="x.selected ? 'blue' : 'transparent'">{{x.date}}</button>
+
+    </li>
+  </ul>
+</div>
+
+<div style="text-align: center;">
+  Selected: {{date}}/{{months[month].month}}/{{year}}
+</div>
+
+<div style="text-align: center; display: inline-block; width: 80%;">
+    <ul #monthsList>
+      <li *ngFor="let m of months; let i = index">
+        
+        <button style="border-radius: 50%; padding: 1%; border: none;" *ngIf="getMonthStatus(i)" disabled="true" (click)="setMonth(i)" [style.background]="m.selected ? 'blue' : 'transparent'">{{m.month}}</button>
+
+        <button style="border-radius: 50%; padding: 1%; border: none;" *ngIf="!getMonthStatus(i)" (click)="setMonth(i)" [style.color]="m.selected ? 'white' : 'black'" [style.background]="m.selected ? 'blue' : 'transparent'">{{m.month}}</button>
+
+      </li>
+    </ul>
+</div>
+
+<div style="float: right; padding-right: 4%;">
+  <ul #yearsList>
+    <li *ngFor="let x of years; let i = index">
+      
+      <button style="border-radius: 50%; padding:30%; border: none;" (click)="setYear(i)" [style.color]="x.selected ? 'white' : 'black'" [style.background]="x.selected ? 'blue' : 'transparent'">{{x.year}}</button>
+
+    </li>
+  </ul>
+</div> -->
+
+<!-- <div style="text-align: center;">
+  <ul>
+    <li *ngFor="let week of getGrid(); let i = index">
+      <ul>
+        <li *ngFor="let x of week" style="display: inline-block;">{{x}}</li>
+      </ul>
+    </li>
+  </ul>
+</div> -->
+
+<!-- <div style="text-align: center;">
+  <div>  
+    <div class="grid-container" *ngFor="let week of getGrid()">
+      <div class="grid-item" *ngFor="let x of week">{{x}}</div>
+    </div>
+  </div>
+</div> -->
+
+<div style="width: 30%; margin-left: 30%;">
+  <div class="row">
+    
+    <div class="column2">
+      <select [(ngModel)]="monthValue" (change)="setDates()">
+        <option *ngFor="let m of dispMonths; let i = index" value="{{m}}">{{m}}</option>
+      </select>
+    </div>
+
+    <div class="column"></div>
+
+    <div class="column2">
+      <select [(ngModel)]="year" (change)="setMonths()">
+        <option *ngFor="let y of years" value="{{y.year}}">{{y.year}}</option>
+      </select>
+    </div>
+
+  </div>
+  
+  <div class="row">
+    <div class="column" *ngFor="let day of days">{{day}}</div>
+  </div>
+  
+  <div class="row" *ngFor="let week of grid; let i = index">
+      <div class="column" *ngFor="let x of week; let j = index;">
+        <div *ngIf="x">
+          <button style="padding: 50%; border-radius: 50%; border: none; background: transparent;" *ngIf="getDateStatus(x.date)" disabled="true">{{x.date}}</button>
+        
+          <button style="padding: 50%; border-radius: 50%; border: none;" *ngIf="!getDateStatus(x.date)" (click)="setDate(i, j)" [style.color]="x.selected ? 'white' : 'black'" [style.background]="x.selected ? 'blue' : 'transparent'">{{x.date}}</button>
+        </div>
+      </div>
+  </div>
+
+  <div class="row">
+    <div class="column3">{{date}} {{monthValue}} {{year}}</div>
+  </div>
+  
+</div>

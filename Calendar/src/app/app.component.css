@@ -1,0 +1,35 @@
+ul{
+	list-style-type: none;
+}
+
+.grid-container {
+	display: grid;
+	grid-template-columns: auto auto auto auto auto auto auto;
+}
+
+.grid-item {
+	text-align: center;
+}
+
+.row {
+	width: 100%;
+	display: table;
+}
+
+.column {
+	float: left;
+	width: 10%;
+	padding: 2%;
+}
+
+.column2 {
+	float: left;
+	width: 30%;
+	margin-left: 10%;
+	margin-bottom: 5%;
+}
+
+.column3 {
+	margin-left: 35%;
+	margin-top: 5%;
+}
